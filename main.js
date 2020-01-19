@@ -41,17 +41,15 @@ const getSavedproject = () => {
 
 
 $('input#save').click(function () {
-    console.log('ok')
-    projectObj.push({
-        id : 157124,
-        name : 'prokkis',
-        file : 'polku',
-        length : 180,
-        width : 190,
-        material : 'teräs'
-        })
-    console.log(projekti.projectObj.name)
-    localStorage.setItem('projekti', JSON.stringify(projekti))
+        uuid = uuidv4()
+        projectObj.id = uuid
+        projectObj.name = document.querySelector('#name').value
+        projectObj.file = document.querySelector('#fileContainer').getAttributeNames
+        projectObj.length = document.querySelector('#length').value
+        projectObj.width = document.querySelector('#width').value
+        projectObj.material = document.querySelector('#material').value
+     
+    localStorage.setItem('projekti', JSON.stringify(projectObj))
 
     var dataImage = localStorage.getItem('imgData');
     console.log(dataImage);
